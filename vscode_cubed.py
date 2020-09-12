@@ -184,7 +184,6 @@ with SmartDisplay(backend="xvfb", size=(1920, 1080)) as disp:
 
             img = disp.waitgrab()
             img_data = img.tobytes()
-            img.save("foo.png")
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, img.size[0], img.size[1], 0, GL_RGB, GL_UNSIGNED_BYTE, img_data)
 
             glClearColor(0, 0, 0, 1)
